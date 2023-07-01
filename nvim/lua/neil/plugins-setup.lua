@@ -109,6 +109,20 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+  -- github copilot
+  use("github/copilot.vim")
+
+  -- debugging
+  --use("mfussenegger/nvim-dap") -- debugger
+  --use("rcarriga/nvim-dap-ui") -- debugger ui
+  --use("theHamsta/nvim-dap-virtual-text") -- virtual text for debugger
+
+  -- testing
+  use("vim-test/vim-test") -- test runner
+
+  -- rust
+  --use("simrat39/rust-tools.nvim") -- rust tools
+
   if packer_bootstrap then
     require("packer").sync()
   end
