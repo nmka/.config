@@ -113,7 +113,7 @@ return packer.startup(function(use)
   use("github/copilot.vim")
 
   -- debugging
-  --use("mfussenegger/nvim-dap") -- debugger
+  use("mfussenegger/nvim-dap") -- debugger
   --use("rcarriga/nvim-dap-ui") -- debugger ui
   --use("theHamsta/nvim-dap-virtual-text") -- virtual text for debugger
 
