@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
----------------------
+--------------------
 -- General Keymaps
 ---------------------
 
@@ -49,7 +49,8 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
 -- telescope diagnostics commands
-keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.open_float()<CR>") -- open diagnostics in floating window
+--
+keymap.set("n", "<leader>do", "<cmd>lua vim.diagnostic.setqflist()<CR>") -- open diagnostics in floating window
 keymap.set("n", "<leader>d[", "<cmd>lua vim.diagnostic.goto_prev()<CR>") -- go to previous diagnostic
 keymap.set("n", "<leader>d]", "<cmd>lua vim.diagnostic.goto_next()<CR>") -- go to next diagnostic
 keymap.set("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>") -- list diagnostics for current buffer
