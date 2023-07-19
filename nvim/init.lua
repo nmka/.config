@@ -1,18 +1,21 @@
-require("neil.plugins-setup")
-require("neil.core.options")
-require("neil.core.keymaps")
-require("neil.core.colorscheme")
-require("neil.plugins.comment")
-require("neil.plugins.nvim-tree")
-require("neil.plugins.lualine")
-require("neil.plugins.telescope")
-require("neil.plugins.nvim-cmp")
-require("neil.plugins.lsp.mason")
-require("neil.plugins.lsp.lspsaga")
-require("neil.plugins.lsp.lspconfig")
-require("neil.plugins.lsp.null-ls")
-require("neil.plugins.autopairs")
-require("neil.plugins.treesitter")
-require("neil.plugins.gitsigns")
-require("neil.plugins.toggleterm")
-require("neil.plugins.nvim-dap")
+require "core"
+
+local custom_init_path = vim.api.nvim_get_runtime_file("lua/custom/init.lua", false)[1]
+
+if custom_init_path then
+  dofile(custom_init_path)
+end
+
+require("core.utils").load_mappings()
+
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+-- bootstrap lazy.nvim!
+if not vim.loop.fs_stat(lazypath) then
+  require("core.bootstrap").gen_chadrc_template()
+  require("core.bootstrap").lazy(lazypath)
+end
+
+dofile(vim.g.base46_cache .. "defaults")
+vim.opt.rtp:prepend(lazypath)
+require "plugins"
