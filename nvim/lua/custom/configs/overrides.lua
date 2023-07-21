@@ -13,6 +13,7 @@ M.treesitter = {
     "c_sharp",
     "markdown",
     "markdown_inline",
+    "rust"
   },
   indent = {
     enable = true,
@@ -38,6 +39,7 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "csharp",
     "csharpier",
     -- rust stuff
     "rust-analyzer",
