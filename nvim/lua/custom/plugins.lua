@@ -52,7 +52,23 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-
+  {
+    'saecki/crates.nvim',
+    ft = {"rust", "toml"},
+    config = function(_, opts)
+      local crates = require('creates')
+      creates.setup(opts)
+      creates.show()
+    end,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function ()
+      local M = require "plugins.configs.cmp"
+      table.insert(M.sources, { name="creates"})
+      return M
+    end,
+  },
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
