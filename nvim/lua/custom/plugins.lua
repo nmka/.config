@@ -56,9 +56,9 @@ local plugins = {
     'saecki/crates.nvim',
     ft = {"rust", "toml"},
     config = function(_, opts)
-      local crates = require('creates')
-      creates.setup(opts)
-      creates.show()
+      local crates = require('crates')
+      crates.setup(opts)
+      crates.show()
     end,
   },
   {

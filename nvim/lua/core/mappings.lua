@@ -310,7 +310,7 @@ M.nvterm = {
 
   n = {
     -- toggle in normal mode
-    ["<A-i>"] = {
+    ["<leader>ti"] = {
       function()
         require("nvterm.terminal").toggle "float"
       end,
